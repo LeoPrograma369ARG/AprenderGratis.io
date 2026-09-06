@@ -1,38 +1,88 @@
+/* Paleta de colores profesionales (Tonos Slate y Azul Rey) */
 :root {
-    --transition-speed: 0.3s;
+    --bs-body-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --primary-dark: #0f172a; /* Texto oscuro principal */
+    --secondary-text: #475569; /* Texto secundario gris/azulado */
+    --accent-blue: #2563eb; /* Azul vibrante profesional */
+    --accent-hover: #1d4ed8;
+    --bg-light-blue: #f8fafc; /* Fondo general ultra claro */
+    --bg-blue-soft: #eff6ff; /* Fondo para iconos */
 }
 
 body {
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    background-color: var(--bg-light-blue);
+    color: var(--secondary-text);
+    font-family: var(--bs-body-font-family);
+    -webkit-font-smoothing: antialiased;
 }
 
-.hero-section {
-    min-height: 65vh;
-    background: linear-gradient(135deg, rgba(13, 110, 253, 0.08) 0%, rgba(0, 0, 0, 0) 100%);
-    padding: 3rem 1rem;
+.text-primary-dark { color: var(--primary-dark) !important; }
+.text-accent { color: var(--accent-blue) !important; }
+.bg-light-blue { background-color: var(--bg-light-blue) !important; }
+.bg-blue-soft { background-color: var(--bg-blue-soft) !important; }
+
+/* Tipografía y Hero */
+.tracking-tight { letter-spacing: -0.03em; }
+.hero-bg {
+    background: radial-gradient(circle at top, #ffffff 0%, #f8fafc 100%);
 }
 
 #typewriter::after {
     content: '|';
     animation: blink 0.8s infinite;
+    color: var(--primary-dark);
 }
-
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
 
-.custom-card {
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    border-radius: 12px;
-    border: 1px solid var(--bs-border-color);
+/* Botones Personalizados */
+.btn-accent {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    color: white;
+}
+.btn-outline-accent {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+.btn-outline-accent:hover {
+    background-color: var(--bg-blue-soft);
+    color: var(--accent-hover);
+    border-color: var(--accent-hover);
 }
 
-.custom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+/* Tarjetas estilo Roadmap.sh */
+.roadmap-card {
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0 !important;
 }
 
-[data-bs-theme="dark"] .hero-section {
-    background: linear-gradient(135deg, rgba(13, 110, 253, 0.15) 0%, rgba(33, 37, 41, 1) 100%);
+.roadmap-card:hover {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1), 0 8px 10px -6px rgba(37, 99, 235, 0.1) !important;
+    transform: translateY(-3px);
+}
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* Badges estilo etiquetas */
+.badge.border {
+    border-color: #cbd5e1 !important;
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
