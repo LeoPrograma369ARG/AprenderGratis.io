@@ -1,114 +1,188 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="light">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechRoadmaps | Educación Tecnológica Gratuita</title>
+    <title>TechRoadmaps | Aprende Programación, Diseño e IA</title>
+    <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-light-blue">
 
-    <header class="sticky-top shadow-sm">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container">
-                <a class="navbar-brand fw-bold text-primary" href="#">TechRoadmaps</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#roadmaps">Roadmaps</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#recursos">Recursos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#comunidad">Comunidad</a></li>
-                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                            <button id="theme-toggle" class="btn btn-outline-secondary btn-sm w-100">🌓 Modo Oscuro</button>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Navbar Minimalista -->
+    <header class="bg-white border-bottom sticky-top">
+        <nav class="navbar navbar-expand-lg py-3 container">
+            <a class="navbar-brand fw-bold text-primary-dark d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-geo-alt-fill text-accent"></i> TechRoadmaps
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-medium text-secondary">
+                    <li class="nav-item"><a class="nav-link px-3" href="#roadmaps">Roadmaps</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#guias">Guías Visuales</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a href="https://github.com" target="_blank" class="btn btn-outline-accent btn-sm px-3 py-2 fw-semibold">
+                            <i class="bi bi-github"></i> Contribuir
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero-section text-center d-flex align-items-center justify-content-center flex-column">
+        <!-- Hero Section Estilo Roadmap.sh -->
+        <section class="text-center py-5 hero-bg border-bottom">
             <div class="container py-5">
-                <h1 class="display-4 fw-bold mb-3">Tu guía definitiva para <span id="typewriter" class="text-primary"></span></h1>
-                <p class="lead mb-4 text-muted mx-auto" style="max-width: 600px;">Plataforma de código abierto creada para democratizar el conocimiento tecnológico de manera 100% gratuita y estructurada.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="#roadmaps" class="btn btn-primary btn-lg shadow-sm">Explorar Rutas</a>
-                    <a href="https://github.com" target="_blank" class="btn btn-outline-primary btn-lg">Ver en GitHub</a>
-                </div>
+                <h1 class="display-4 fw-bolder text-primary-dark mb-3 tracking-tight">
+                    Rutas de aprendizaje para <br>
+                    <span id="typewriter" class="text-accent"></span>
+                </h1>
+                <p class="lead text-muted mx-auto mb-4" style="max-width: 650px;">
+                    Guías paso a paso, rutas estructuradas y recursos gratuitos creados por la comunidad para dominar la tecnología actual.
+                </p>
+                <a href="#roadmaps" class="btn btn-accent btn-lg px-4 py-2 fw-bold shadow-sm">Explorar Rutas</a>
             </div>
         </section>
 
-        <section id="roadmaps" class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Rutas de Aprendizaje</h2>
-                <p class="text-muted">Elige tu camino y domina las tecnologías más demandadas del mercado.</p>
-            </div>
-            <div class="row g-4">
+        <!-- Grilla de Roadmaps -->
+        <section id="roadmaps" class="container py-5 mt-4">
+            <h2 class="fw-bold text-primary-dark mb-4 text-center">Basado en Roles</h2>
+            
+            <div class="row g-4 justify-content-center">
                 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm custom-card p-3">
-                        <div class="card-body">
-                            <div class="fs-1 mb-3">🎨</div>
-                            <h3 class="h5 card-title fw-bold text-primary">Frontend</h3>
-                            <p class="card-text text-muted small">Domina HTML5, CSS3 moderno, JavaScript avanzado, Bootstrap y frameworks interactivos.</p>
+                <!-- Frontend -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card roadmap-card h-100 border-0 shadow-sm p-4">
+                            <div class="d-flex align-items-center mb-3 gap-3">
+                                <div class="icon-box bg-blue-soft text-accent">
+                                    <i class="bi bi-browser-chrome fs-4"></i>
+                                </div>
+                                <h3 class="h5 fw-bold mb-0 text-primary-dark">Frontend</h3>
+                            </div>
+                            <p class="text-muted small mb-3">Construye interfaces web interactivas y responsivas.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-light text-secondary border">HTML/CSS</span>
+                                <span class="badge bg-light text-secondary border">JavaScript</span>
+                                <span class="badge bg-light text-secondary border">React</span>
+                            </div>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0 pt-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm w-100">Explorar Ruta</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm custom-card p-3">
-                        <div class="card-body">
-                            <div class="fs-1 mb-3">⚙️</div>
-                            <h3 class="h5 card-title fw-bold text-primary">Backend</h3>
-                            <p class="card-text text-muted small">Construye APIs robustas, gestiona bases de datos y aprende lógica de servidores.</p>
+                <!-- Backend -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card roadmap-card h-100 border-0 shadow-sm p-4">
+                            <div class="d-flex align-items-center mb-3 gap-3">
+                                <div class="icon-box bg-blue-soft text-accent">
+                                    <i class="bi bi-hdd-network fs-4"></i>
+                                </div>
+                                <h3 class="h5 fw-bold mb-0 text-primary-dark">Backend</h3>
+                            </div>
+                            <p class="text-muted small mb-3">Desarrolla APIs, bases de datos y arquitectura de servidores.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-light text-secondary border">Node.js</span>
+                                <span class="badge bg-light text-secondary border">Python</span>
+                                <span class="badge bg-light text-secondary border">SQL</span>
+                            </div>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0 pt-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm w-100">Explorar Ruta</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm custom-card p-3">
-                        <div class="card-body">
-                            <div class="fs-1 mb-3">🚀</div>
-                            <h3 class="h5 card-title fw-bold text-primary">Git y DevOps</h3>
-                            <p class="card-text text-muted small">Control de versiones con Git, flujos en GitHub, contenedores y despliegues en la nube.</p>
+                <!-- Diseño UI/UX -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card roadmap-card h-100 border-0 shadow-sm p-4">
+                            <div class="d-flex align-items-center mb-3 gap-3">
+                                <div class="icon-box bg-blue-soft text-accent">
+                                    <i class="bi bi-vector-pen fs-4"></i>
+                                </div>
+                                <h3 class="h5 fw-bold mb-0 text-primary-dark">Diseño UI/UX</h3>
+                            </div>
+                            <p class="text-muted small mb-3">Diseña experiencias de usuario memorables y accesibles.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-light text-secondary border">Figma</span>
+                                <span class="badge bg-light text-secondary border">Wireframing</span>
+                                <span class="badge bg-light text-secondary border">Research</span>
+                            </div>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0 pt-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm w-100">Explorar Ruta</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm custom-card p-3">
-                        <div class="card-body">
-                            <div class="fs-1 mb-3">💡</div>
-                            <h3 class="h5 card-title fw-bold text-primary">Fundamentos</h3>
-                            <p class="card-text text-muted small">Lógica de programación, resolución de problemas y bases esenciales de la informática.</p>
+                <!-- Inteligencia Artificial -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card roadmap-card h-100 border-0 shadow-sm p-4">
+                            <div class="d-flex align-items-center mb-3 gap-3">
+                                <div class="icon-box bg-blue-soft text-accent">
+                                    <i class="bi bi-robot fs-4"></i>
+                                </div>
+                                <h3 class="h5 fw-bold mb-0 text-primary-dark">Inteligencia Artificial</h3>
+                            </div>
+                            <p class="text-muted small mb-3">Aprende Machine Learning, Redes Neuronales y LLMs.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-light text-secondary border">Machine Learning</span>
+                                <span class="badge bg-light text-secondary border">NLP</span>
+                                <span class="badge bg-light text-secondary border">PyTorch</span>
+                            </div>
                         </div>
-                        <div class="card-footer bg-transparent border-top-0 pt-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm w-100">Explorar Ruta</a>
+                    </a>
+                </div>
+
+                <!-- Prompt Engineering -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card roadmap-card h-100 border-0 shadow-sm p-4">
+                            <div class="d-flex align-items-center mb-3 gap-3">
+                                <div class="icon-box bg-blue-soft text-accent">
+                                    <i class="bi bi-chat-square-text fs-4"></i>
+                                </div>
+                                <h3 class="h5 fw-bold mb-0 text-primary-dark">Prompt Engineering</h3>
+                            </div>
+                            <p class="text-muted small mb-3">Domina la comunicación con modelos de lenguaje e IA generativa.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-light text-secondary border">ChatGPT</span>
+                                <span class="badge bg-light text-secondary border">Midjourney</span>
+                                <span class="badge bg-light text-secondary border">Lógica</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+                </div>
+
+                <!-- DevOps -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card roadmap-card h-100 border-0 shadow-sm p-4">
+                            <div class="d-flex align-items-center mb-3 gap-3">
+                                <div class="icon-box bg-blue-soft text-accent">
+                                    <i class="bi bi-infinity fs-4"></i>
+                                </div>
+                                <h3 class="h5 fw-bold mb-0 text-primary-dark">DevOps</h3>
+                            </div>
+                            <p class="text-muted small mb-3">Automatiza infraestructuras, despliegues y contenedores.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                <span class="badge bg-light text-secondary border">Docker</span>
+                                <span class="badge bg-light text-secondary border">Git</span>
+                                <span class="badge bg-light text-secondary border">AWS</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
             </div>
         </section>
     </main>
 
-    <footer class="bg-body-tertiary text-center py-4 mt-5 border-top">
+    <footer class="bg-white text-center py-4 mt-5 border-top">
         <div class="container">
-            <p class="mb-0 text-muted small">© 2026 TechRoadmaps. Educación abierta y sin barreras.</p>
+            <p class="mb-0 text-muted small fw-medium">© 2026 TechRoadmaps. El conocimiento le pertenece al mundo.</p>
         </div>
     </footer>
 
