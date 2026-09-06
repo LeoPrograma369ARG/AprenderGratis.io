@@ -1,28 +1,12 @@
-const themeToggleBtn = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
+// Array ampliado para incluir las nuevas disciplinas
+const words = [
+    "Desarrolladores Web", 
+    "Diseñadores UI/UX", 
+    "Ingenieros de IA", 
+    "Especialistas Cloud"
+];
 
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    htmlElement.setAttribute('data-bs-theme', savedTheme);
-    updateButtonText(savedTheme);
-}
-
-themeToggleBtn.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    htmlElement.setAttribute('data-bs-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateButtonText(newTheme);
-});
-
-function updateButtonText(theme) {
-    themeToggleBtn.innerHTML = theme === 'light' ? '🌓 Modo Oscuro' : '☀️ Modo Claro';
-}
-
-const words = ["Aprender Desarrollo Web", "Dominar DevOps y Git", "Tecnología sin barreras"];
 const typewriterElement = document.getElementById('typewriter');
-
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -38,20 +22,22 @@ function typeEffect() {
         charIndex++;
     }
 
-    let typingSpeed = isDeleting ? 40 : 80;
+    // Velocidades ajustadas para que se vea más fluido y profesional
+    let typingSpeed = isDeleting ? 30 : 60;
 
     if (!isDeleting && charIndex === currentWord.length) {
-        typingSpeed = 2000;
+        typingSpeed = 2500; // Pausa antes de borrar
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
-        typingSpeed = 400;
+        typingSpeed = 400; // Pausa antes de escribir la siguiente palabra
     }
 
     setTimeout(typeEffect, typingSpeed);
 }
 
+// Iniciar el efecto al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(typeEffect, 400);
+    setTimeout(typeEffect, 500);
 });
