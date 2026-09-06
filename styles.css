@@ -1,0 +1,38 @@
+:root {
+    --transition-speed: 0.3s;
+}
+
+body {
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.hero-section {
+    min-height: 65vh;
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.08) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 3rem 1rem;
+}
+
+#typewriter::after {
+    content: '|';
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.custom-card {
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border-radius: 12px;
+    border: 1px solid var(--bs-border-color);
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-bs-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.15) 0%, rgba(33, 37, 41, 1) 100%);
+}
